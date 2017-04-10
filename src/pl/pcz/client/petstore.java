@@ -2,8 +2,8 @@ package pl.pcz.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -22,27 +22,28 @@ public class petstore implements EntryPoint {
 	table.setText(0, 0, "123");
 	table.setText(0, 1, "Spot");
 
+        Label header = new Label("Petstore");
+	header.addStyleName("header");
+
 	VerticalPanel right = new VerticalPanel();
 	FlowPanel f1 = new FlowPanel();
-	f1.add(new Label("ID:"));
+	f1.add(new Label("ID: "));
 	f1.add(id);
 	FlowPanel f2 = new FlowPanel();
-	f1.add(new Label("Name:"));
-	f1.add(name);
+	f2.add(new Label("Name: "));
+	f2.add(name);
 	FlowPanel f3 = new FlowPanel();
-	f1.add(new Label("Category:"));
-	f1.add(category);
+	f3.add(new Label("Category: "));
+	f3.add(category);
 	right.add(f1);
 	right.add(f2);
 	right.add(f3);
 
-	HorizontalPanel middle = new HorizontalPanel();
+        HorizontalPanel middle = new HorizontalPanel();
 	middle.addStyleName("middle");
 	middle.add(table);
 	middle.add(right);
 
-	Label header = new Label("Petstore");
-	header.addStyleName("header");
 	FlowPanel footer = new FlowPanel();
 	footer.addStyleName("footer");
 	footer.add(new Label("Kontakt: "));
@@ -50,10 +51,10 @@ public class petstore implements EntryPoint {
 			      "mailto: office@petstore.pcz.pl"));
 
 	VerticalPanel vp = new VerticalPanel();
+	vp.addStyleName("outer");
 	vp.add(header);
 	vp.add(middle);
 	vp.add(footer);
-	vp.addStyleName("outer");
 
 	RootPanel rp = RootPanel.get();
 	rp.add(vp);

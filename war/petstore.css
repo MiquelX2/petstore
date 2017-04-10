@@ -1,12 +1,11 @@
 .outer
 {
     width: 100%;
-    background: red;
 }
 
 .header
 {
-    font-size: 10em;
+    font-size: 5em;
     text-align: center;
     background: red;
 }
@@ -15,11 +14,14 @@
 {
     background: yellow;
     width: 100%;
-    height: 100%;
+}
+
+.middle .gwt-Label, .footer .gwt-Label
+{
+    display: inline;
 }
 
 .footer
 {
-    width: 100%;
     background: orange;
 }
