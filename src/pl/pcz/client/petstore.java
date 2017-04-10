@@ -18,6 +18,7 @@ public class petstore implements EntryPoint {
 
     public void onModuleLoad() {
 	// Sample pet data.
+	table.addStyleName("table");
 	table.setText(0, 0, "123");
 	table.setText(0, 1, "Spot");
 
@@ -36,11 +37,14 @@ public class petstore implements EntryPoint {
 	right.add(f3);
 
 	HorizontalPanel middle = new HorizontalPanel();
+	middle.addStyleName("middle");
 	middle.add(table);
 	middle.add(right);
 
 	Label header = new Label("Petstore");
+	header.addStyleName("header");
 	FlowPanel footer = new FlowPanel();
+	footer.addStyleName("footer");
 	footer.add(new Label("Kontakt: "));
 	footer.add(new Anchor("office@petstore.pcz.pl",
 			      "mailto: office@petstore.pcz.pl"));
@@ -49,6 +53,9 @@ public class petstore implements EntryPoint {
 	vp.add(header);
 	vp.add(middle);
 	vp.add(footer);
-	RootPanel.get().add(vp);
+	vp.addStyleName("outer");
+
+	RootPanel rp = RootPanel.get();
+	rp.add(vp);
     }
 }
